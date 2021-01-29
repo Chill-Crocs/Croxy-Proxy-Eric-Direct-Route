@@ -4,7 +4,7 @@ body {
 
 #grid-container {
   display: grid;
-  grid-template-columns: 842px 421px;
+  grid-template-columns: 853px 427px;
   grid-auto-rows: minmax(100px, 100px);
 }
 
