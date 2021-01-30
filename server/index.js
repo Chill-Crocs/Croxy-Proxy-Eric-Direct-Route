@@ -36,33 +36,33 @@ app.listen(PORT, () => {
   console.log(`Server running on localhost:${PORT}`);
 });
 
-var AWS = require('aws-sdk');
-var fs = require('fs');
+// var AWS = require('aws-sdk');
+// var fs = require('fs');
 
-AWS.config.loadFromPath(path.resolve(__dirname, 'config.json'));
-AWS.config.update({
-  accessKeyId: AWS.config.credentials.accessKeyId,
-  secretAccessKey: AWS.config.credentials.secretAccessKey,
-  region: AWS.config.region
-});
+// AWS.config.loadFromPath(path.resolve(__dirname, 'config.json'));
+// AWS.config.update({
+//   accessKeyId: AWS.config.credentials.accessKeyId,
+//   secretAccessKey: AWS.config.credentials.secretAccessKey,
+//   region: AWS.config.region
+// });
 
-var s3 = new AWS.S3();
-var params;
-var bucketParams = {
-  Bucket : 'croxy-proxy-eric-bucket',
-};
-s3.listObjects(bucketParams, function(err, data) {
-  if (err) {
-    console.log("Error", err);
-  } else {
-    data.Contents.map((img) => {
-      params = {
-        Bucket: 'croxy-proxy-eric-bucket',
-        Key: img.Key
-      };
-      let readStream = s3.getObject(params).createReadStream();
-      let writeStream = fs.createWriteStream(path.join('public/imgs', img.Key.substring(5)));
-      readStream.pipe(writeStream);
-    })
-  }
-});
+// var s3 = new AWS.S3();
+// var params;
+// var bucketParams = {
+//   Bucket : 'croxy-proxy-eric-bucket',
+// };
+// s3.listObjects(bucketParams, function(err, data) {
+//   if (err) {
+//     console.log("Error", err);
+//   } else {
+//     data.Contents.map((img) => {
+//       params = {
+//         Bucket: 'croxy-proxy-eric-bucket',
+//         Key: img.Key
+//       };
+//       let readStream = s3.getObject(params).createReadStream();
+//       let writeStream = fs.createWriteStream(path.join('public/imgs', img.Key.substring(5)));
+//       readStream.pipe(writeStream);
+//     })
+//   }
+// });
