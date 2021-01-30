@@ -4,12 +4,12 @@ body {
 
 #grid-container {
   display: grid;
-  grid-template-columns: 853px 427px;
+  grid-template-columns: 1fr 853px 427px 1fr;
   grid-auto-rows: minmax(100px, 100px);
 }
 
 #header {
-  grid-column: 1/3;
+  grid-column: 1/5;
   grid-row: 1;
   border: solid;
   border-color: rgba(34, 34, 34, 0.15);
@@ -19,10 +19,11 @@ body {
   border-right: none;
   background-image: url('imgs/etsyheader.png');
   background-size: 1280px;
+  background-position: center;
 }
 
-#carousel {
-  grid-column: 1;
+#image {
+  grid-column: 2/3;
   grid-row: 2/8;
   border: solid;
   border-color: grey;
@@ -31,7 +32,7 @@ body {
 }
 
 #cart {
-  grid-column: 2;
+  grid-column: 3/4;
   grid-row: 2/24;
   border: solid;
   border-color: grey;
@@ -40,7 +41,7 @@ body {
 }
 
 #reviews {
-  grid-column: 1;
+  grid-column: 2/3;
   grid-row: 8/24;
   border: solid;
   border-color: grey;
@@ -49,13 +50,13 @@ body {
 }
 
 #related {
-  grid-column: 1/3;
+  grid-column: 1/5;
   grid-row: 24/31;
   border: none;
 }
 
 #footer {
-  grid-column: 1/3;
+  grid-column: 1/5;
   grid-row: 31/37;
   background-image: url('imgs/Croxy-Footer.png');
   background-size: 1280px;
