@@ -11,7 +11,7 @@ app.use(express.static(PUBLIC_DIR));
 const PORT = 3000 || process.env.PORT;
 
 app.get('/api/item/:itemID', (req, res) => {
-  axios.get(`http://3.140.252.86:3003/api/item/${56}`)
+  axios.get(`http://3.140.252.86:3003/api/item/${77}`)
     .then((result) => res.send(result.data));
 });
 
