@@ -5,6 +5,7 @@ const axios = require('axios');
 const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
 const app = express();
 
+app.use(express.json());
 app.use(express.static(PUBLIC_DIR));
 
 const PORT = 3000 || process.env.PORT;
